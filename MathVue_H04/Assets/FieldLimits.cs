@@ -11,12 +11,7 @@ public class FieldLimits : MonoBehaviour
 
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Debugging: Show the limits in the console
+        Debug.Log($"Field Limits: xMin={xMin}, xMax={xMax}, zMin={zMin}, zMax={zMax}");
     }
 }
