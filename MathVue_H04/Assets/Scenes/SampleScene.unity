@@ -328,10 +328,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680e93e9265fd4c449f7fc7819755029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMin: -20
-  xMax: 20
-  zMin: -3
-  zMax: 3
+  xMin: -35
+  xMax: 35
+  zMin: -6
+  zMax: 6
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,6 +817,10 @@ PrefabInstance:
     - target: {fileID: 2685020275544744599, guid: 8320d6d2afbabef43a9371952c09e1c2, type: 3}
       propertyPath: m_Name
       value: Puck
+      objectReference: {fileID: 0}
+    - target: {fileID: 3480614587312271269, guid: 8320d6d2afbabef43a9371952c09e1c2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4650950281728629360, guid: 8320d6d2afbabef43a9371952c09e1c2, type: 3}
       propertyPath: m_LocalPosition.x
