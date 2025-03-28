@@ -19,7 +19,7 @@ public class PuckController : MonoBehaviour
             // Corrige la position
             newPos.x = fieldLimits.xMin + radius;
 
-            // Au lieu de velocity.x = -velocity.x, on applique la formule
+
             // La normale du mur gauche pointe vers la droite : (1,0,0)
             Vector3 wallNormal = new Vector3(1, 0, 0);
             velocity = MathUtils.ReflectVelocity(velocity, wallNormal);
