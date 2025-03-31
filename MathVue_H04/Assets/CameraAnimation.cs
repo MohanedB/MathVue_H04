@@ -63,7 +63,7 @@ public class CameraAnimation : MonoBehaviour
                     newPos = (1f - t) * p0 + t * p1;
 
                     // La direction que la cam regarde Ce qui fait flicker la cam quand on change de segement
-                    tangent = (p1 - p0).normalized;
+                    //tangent = (p1 - p0).normalized;
 
                     break;
                 }
@@ -92,7 +92,7 @@ public class CameraAnimation : MonoBehaviour
                     newPos = CubicBezier(p0, p1, p2, p3, t);
 
                     // Calcule la tangente (dérivée) pour orienter la caméra
-                    tangent = CubicBezierTangent(p0, p1, p2, p3, t).normalized;
+                    //tangent = CubicBezierTangent(p0, p1, p2, p3, t).normalized;
 
                     break;
                 }
