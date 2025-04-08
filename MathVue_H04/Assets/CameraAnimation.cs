@@ -15,7 +15,7 @@ public class CameraAnimation : MonoBehaviour
     float t = 0f;
 
     // Angle d'inclinaison vers le bas (en degrés)
-    public float pitchAngle = 30f;
+    //public float pitchAngle = 30f;
 
     void Update()
     {
@@ -61,6 +61,7 @@ public class CameraAnimation : MonoBehaviour
                     // Interpolation linéaire entre p0 et p1 en autre ot ce qui fait avancer la camera entre 2 points
                     //newPos = Vector3.Lerp(p0, p1, t);
                     newPos = (1f - t) * p0 + t * p1;
+                    transform.LookAt(newPos);
 
                     // La direction que la cam regarde Ce qui fait flicker la cam quand on change de segement
                     //tangent = (p1 - p0).normalized;
@@ -90,7 +91,7 @@ public class CameraAnimation : MonoBehaviour
 
                     // Calcule la position avec la formule de Bézier
                     newPos = CubicBezier(p0, p1, p2, p3, t);
-
+                    transform.LookAt(newPos);
                     // Calcule la tangente (dérivée) pour orienter la caméra
                     //tangent = CubicBezierTangent(p0, p1, p2, p3, t).normalized;
 
@@ -118,6 +119,7 @@ public class CameraAnimation : MonoBehaviour
 
                     // Calcule la position sur la courbe Catmull-Rom
                     newPos = CatmullRom(p0, p1, p2, p3, t);
+                    transform.LookAt(newPos);
 
                     // Calcule la tangente (dérivée) pour l'orientation
                     tangent = CatmullRomTangent(p0, p1, p2, p3, t).normalized;
@@ -136,9 +138,9 @@ public class CameraAnimation : MonoBehaviour
             // Rotation de base (regarde dans la direction de 'tangent')
             Quaternion baseRotation = Quaternion.LookRotation(tangent, Vector3.up);
             // Inclinaison supplémentaire vers le bas (pitch négatif)
-            Quaternion pitchDown = Quaternion.Euler(-pitchAngle, 0f, 0f);
+           // Quaternion pitchDown = Quaternion.Euler(-pitchAngle, 0f, 0f);
             // Combine les deux rotations
-            transform.rotation = baseRotation * pitchDown;
+            //transform.rotation = baseRotation * pitchDown;
         }
 
         // Progression du paramètre t
